@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "ZD";
+  src: url("ZenDots-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #8388e9;
+  /* font-family: ZD; */
+}
+.main {
+  width: 1000px;
+  margin: 30px auto;
+  border-radius: 20px;
+  border: 5px solid black;
+  background-color: #fbf4e6;
+  box-shadow: 5px 5px 0 black;
+  position: relative;
+}
+button:hover{
+  background-color: lightgray !important;
+}
+.main .title {
+  /* position: absolute; */
+  width: 100%;
+  line-height: 60px;
+  height: 60px;
+  border-bottom: 2px solid black;
+  text-indent: 1em;
+  font-size: 30px;
+  font-weight: bold;
+  /* font-family: "微软雅黑"; */
+}
+
+.main .icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
+  margin-right: 20px;
+  float: right;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-color: #fbf4e6;
+  box-shadow: 2px 2px 0 black;
+  position: relative;
+  overflow: hidden;
+}
+
+.main .icon > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.main .center {
+  margin-top: 30px;
+  width: 100%;
+  line-height: 50px;
+  height: 260px;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main .center .logo {
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .center .logo > img {
+  height: 90%;
+  /* margin: 0 auto; */
+}
+
+.main .dialog {
+  position: absolute;
+  top: 175px;
+  left: 200px;
+  width: 600px;
+  height: 260px;
+  border-radius: 20px;
+  border: 5px solid black;
+  background-color: #fbf4e6;
+  box-shadow: 5px 5px 0 black;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.dialog img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.dialog .content {
+  font-size: 20px;
+  margin-top: 110px;
+}
+
+.main .bottom {
+  margin-top: -1rem;
+  width: 100%;
+
+  /* height: 300px; */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.main .bottom .input {
+  width: 40%;
+  margin: 0 auto;
+  display: block;
+  text-align: left;
+}
+
+.main .bottom h2,h3,input {
+  margin-bottom: 10px;
+}
+
+.main h2 {
+  display: inline;
+  font-size: 1.7rem;
+  background-color: #b0efbb;
+}
+
+.main h3 {
+  margin-top: 1.7rem;
+  font-weight: normal;
+}
+
+.main .bottom .input span {
+  display: block;
+  text-align: left;
+  margin-bottom: .7rem;
+  margin-left: .1rem;
+}
+
+.main .bottom .input input {
+  width: 100%;
+  background-color: #fbf4e6;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.main .bottom .input button {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  height: 50px;
+  width: 100px;
+  background-color: #fbf4e6;
+  border-radius: 5px;
+  font-size: 1rem;
+}

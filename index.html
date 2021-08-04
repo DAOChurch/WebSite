@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" />
+  <title>DAO.church</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="main">
+    <div class="title">
+      DAO.church
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <!-- <div class="icon"><img src="img/头像01.png" alt=""></div>
+      <div class="icon"><img src="img/头像02.png" alt=""></div>
+      <div class="icon"><img src="img/头像03.png" alt=""></div> -->
+    </div>
+    <div style="width: 100%;text-align: center;margin-top: 3rem;">
+      <h2>Next-gen human collaboration tool</h2>
+      <h3>Dao-As-A-Service that really adopted by communities</h3>
+    </div>
+    <div class="center">
+      <div class="logo">
+        <img src="img/logo.png" alt="">
+      </div>
+      <div class="dialog" id="confirm" style="display: none;">
+        <img src="img/错误.png" alt="" onclick="hideDialog('confirm')">
+        <div class="content">Please check your mailbox and confirm your email.</div>
+      </div>
+      <div class="dialog" id="error" style="display: none;">
+        <img src="img/错误.png" alt="" onclick="hideDialog('error')">
+        <div class="content">Please enter a correct Email</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="input">
+        <span> Sign up for early access:</span>
+        <input type="text" id="email" placeholder="Email">
+        <button type="submit" onclick="submit()">Submit</button>
+      </div>
+    </div>
+  </div>
+  <script language="JavaScript">
+    function isEmail(str) {
+      var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+      return  reg.test(str);
+    }
+    function submit() {
+      var confirm = document.getElementById('confirm');
+      var error = document.getElementById('error');
+      var email = document.getElementById('email').value;
+      if (isEmail(email)) {
+        fetch('/api/f',{
+          method:"POST",
+          body:JSON.stringify({
+            email:email
+          }),
+          headers: new Headers({'Content-Type':'application/json'})
+        }).then((res)=>{
+          return res.text()
+        }).then((res)=>{
+          console.log(res)
+          if(res=='EMAIL ACTIVE'){
+            document.getElementsByClassName('content')[0].innerHTML='Your email address is active in our database.' 
+          }
+        }).catch((err)=>{
+          console.error(err);
+        })
+        confirm.style.display = 'block'
+      } else {
+        error.style.display = 'block'
+        setTimeout(function() {
+          error.style.display = 'none'
+        }, 2000)
+      }
+    }
+    function hideDialog(id) {
+      var el = document.getElementById(id);
+      el.style.display = 'none'
+      el.children[1].innerHTML = 'Please check your mailbox and confirm your email.'
+    }
+  </script> 
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/77018ac2be857f1d76d56ed7e/f611fad2308120abe5c051eb7.js");</script>
+</body>
+</html>
