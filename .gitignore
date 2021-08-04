@@ -1,0 +1,6 @@
+email.db
+.vscode/sftp.json
+site/.app.py.swp
+site/default.ini
+site/myuwsgi.ini
+site/__pycache__/app.cpython-38.pyc
